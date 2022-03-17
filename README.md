@@ -35,7 +35,7 @@ to use the Atlas Search features.
 5. Navigate to your Atlas Cluster either via Compass, Atlas UI or simple the mongosh
 6. Run queries against your documents
 
-![Available in Compass](documentation/available_in_compass.png)
+![Available in Compass](documentation/available_in_compass_ui.png)
 
 7. If you have enabled Atlas search on the documents, you can run full text search on your uploaded documents eg:
 ```
