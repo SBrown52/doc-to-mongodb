@@ -5,6 +5,10 @@
 This is a small project which allows you to extract data from documents such as PDF, word, txt etc, and make them queryable
 and searchable from MongoDB. When combined with Atlas Search, you can perform full Lucene text search on the document.
 
+**UPDATE**
+
+The most recent version also extracts the person, location and organisationentities from documents and adds them as an embedded object of arrays.
+
 NB: this is designed as an example of what *you can do* with MongoDB, Atlas etc. It is not a production system, and it has not been tested
 against every single document type and for performance.
 

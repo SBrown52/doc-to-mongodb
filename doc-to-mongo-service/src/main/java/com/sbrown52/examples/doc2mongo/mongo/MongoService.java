@@ -23,12 +23,16 @@ public class MongoService {
     String collection;
 
     public InsertOneResult saveDoc(String filename) throws Exception {
-        String content = new DocumentParser(filename).parseFile();
+        var parser = new DocumentParser(filename);
+        var content = parser.parseFile();
+        var entities = parser.extractEntities(content);
 
-        Document doc = new Document();
+
+        var doc = new Document();
         doc.put("filename", filename);
         doc.put("timestamp", LocalDateTime.now());
         doc.put("content", content);
+        doc.put("entities", entities);
 
         var result = template.getCollection(collection).insertOne(doc);
 
@@ -36,7 +40,7 @@ public class MongoService {
     }
 
     public List<Document> getUploadedDocs() {
-        var projection = Projections.fields(Projections.exclude("content"));
+        var projection = Projections.fields(Projections.exclude("content", "entities"));
         return template.getCollection(collection).find().projection(projection).limit(10).into(new ArrayList<>());
     }
 
