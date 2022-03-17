@@ -43,7 +43,7 @@ db.docs.aggregate([
   {$search: {
     index: 'default',
     text: {
-      query: 'ethics',
+      query: 'sample',
       path: 'content'
     }
   }
