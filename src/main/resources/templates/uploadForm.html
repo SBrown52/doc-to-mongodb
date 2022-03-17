@@ -1,0 +1,40 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MongoDB Doc Uploader</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div>
+    <img th:src="@{images/MongoDB_Logo.svg}"/>
+</div>
+
+<div>
+    <h2>File Uploader to Atlas Search</h2>
+</div>
+
+<div>
+    <form method="POST" enctype="multipart/form-data" action="/">
+        <table>
+            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div th:if="${message}">
+    <p th:text="${message}"/>
+</div>
+
+<div>
+    <p>Previously uploaded files</p>
+    <ul>
+        <li th:each="file : ${files}">
+            <a th:text="${file}" />
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

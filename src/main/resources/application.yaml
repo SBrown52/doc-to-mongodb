@@ -1,0 +1,16 @@
+server:
+  port: 9090
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 16MB
+      max-request-size: 16MB
+  data:
+    mongodb:
+      uri: <insert>
+      database: pdfuploads
+      collection: docs
+
+storage:
+  uploadDirectory: uploaded-docs
