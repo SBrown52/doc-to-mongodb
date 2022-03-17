@@ -38,7 +38,7 @@ to use the Atlas Search features.
 ![Available in Compass](documentation/available_in_compass_ui.png)
 
 7. If you have enabled Atlas search on the documents, you can run full text search on your uploaded documents eg:
-```
+```js
 db.docs.aggregate([
   {$search: {
     index: 'default',
@@ -50,7 +50,7 @@ db.docs.aggregate([
 }])
 ```
 returns...
-```
+```js
 { 
   _id: ObjectId("6233278f9cef7f7c64f2d317"),
   filename: 'uploaded-docs/sample1.txt',
