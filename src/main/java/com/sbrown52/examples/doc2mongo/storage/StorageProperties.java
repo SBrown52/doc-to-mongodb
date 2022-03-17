@@ -1,4 +1,4 @@
-package com.sbrown52.examples.pdfmongo.storage;
+package com.sbrown52.examples.doc2mongo.storage;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

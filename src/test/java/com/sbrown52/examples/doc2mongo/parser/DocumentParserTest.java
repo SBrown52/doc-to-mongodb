@@ -1,4 +1,4 @@
-package com.sbrown52.examples.pdfmongo.parser;
+package com.sbrown52.examples.doc2mongo.parser;
 
 import org.junit.jupiter.api.Test;
 

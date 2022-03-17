@@ -1,12 +1,11 @@
-package com.sbrown52.examples.pdfmongo.fileupload;
+package com.sbrown52.examples.doc2mongo.fileupload;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.stream.Collectors;
 
-import com.sbrown52.examples.pdfmongo.mongo.MongoService;
-import com.sbrown52.examples.pdfmongo.storage.StorageService;
-import com.sbrown52.examples.pdfmongo.storage.exception.StorageFileNotFoundException;
+import com.sbrown52.examples.doc2mongo.mongo.MongoService;
+import com.sbrown52.examples.doc2mongo.storage.StorageService;
+import com.sbrown52.examples.doc2mongo.storage.exception.StorageFileNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller

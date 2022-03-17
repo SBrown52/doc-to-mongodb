@@ -1,7 +1,7 @@
-package com.sbrown52.examples.pdfmongo.storage;
+package com.sbrown52.examples.doc2mongo.storage;
 
-import com.sbrown52.examples.pdfmongo.storage.exception.StorageException;
-import com.sbrown52.examples.pdfmongo.storage.exception.StorageFileNotFoundException;
+import com.sbrown52.examples.doc2mongo.storage.exception.StorageException;
+import com.sbrown52.examples.doc2mongo.storage.exception.StorageFileNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;

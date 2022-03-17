@@ -9,13 +9,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sbrown52.examples</groupId>
-	<artifactId>dob-to-mongodb</artifactId>
+	<artifactId>doc-to-mongo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dog-to-mongodb</name>
-	<description>Upload PDFs to MongoDB </description>
+	<name>doc-to-mongo</name>
+	<description>Upload documents to MongoDB</description>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

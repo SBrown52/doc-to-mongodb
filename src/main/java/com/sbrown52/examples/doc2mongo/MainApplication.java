@@ -1,7 +1,7 @@
-package com.sbrown52.examples.pdfmongo;
+package com.sbrown52.examples.doc2mongo;
 
-import com.sbrown52.examples.pdfmongo.storage.StorageProperties;
-import com.sbrown52.examples.pdfmongo.storage.StorageService;
+import com.sbrown52.examples.doc2mongo.storage.StorageProperties;
+import com.sbrown52.examples.doc2mongo.storage.StorageService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

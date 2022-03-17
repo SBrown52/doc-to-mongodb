@@ -1,8 +1,8 @@
-package com.sbrown52.examples.pdfmongo.mongo;
+package com.sbrown52.examples.doc2mongo.mongo;
 
 import com.mongodb.client.model.Projections;
 import com.mongodb.client.result.InsertOneResult;
-import com.sbrown52.examples.pdfmongo.parser.DocumentParser;
+import com.sbrown52.examples.doc2mongo.parser.DocumentParser;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

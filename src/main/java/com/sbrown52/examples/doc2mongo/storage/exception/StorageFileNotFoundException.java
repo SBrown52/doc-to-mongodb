@@ -1,4 +1,4 @@
-package com.sbrown52.examples.pdfmongo.storage.exception;
+package com.sbrown52.examples.doc2mongo.storage.exception;
 
 public class StorageFileNotFoundException extends StorageException {
 
