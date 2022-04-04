@@ -10,8 +10,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class MongoService {
@@ -22,11 +21,14 @@ public class MongoService {
     @Value("${spring.data.mongodb.collection}")
     String collection;
 
-    public InsertOneResult saveDoc(String filename) throws Exception {
+    public InsertOneResult saveDoc(String filename, boolean extractEntities) throws Exception {
         var parser = new DocumentParser(filename);
         var content = parser.parseFile();
-        var entities = parser.extractEntities(content);
+        Map<String, Set<String>> entities = new HashMap<>();
 
+        if (extractEntities) {
+            entities = parser.extractEntities(content);
+        }
 
         var doc = new Document();
         doc.put("filename", filename);

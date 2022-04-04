@@ -31,6 +31,7 @@ public class FileUploadController {
 
     private final StorageService storageService;
     private final MongoService mongoService;
+    private boolean extractEntities = false;
 
     @Value("${storage.uploadDirectory}")
     private String uploadDirectory;
@@ -45,6 +46,7 @@ public class FileUploadController {
     public String listUploadedFiles(Model model) throws IOException {
 
         model.addAttribute("files", mongoService.getUploadedDocs());
+        model.addAttribute("extractEntities", extractEntities);
 
         return "uploadForm";
     }
@@ -60,13 +62,14 @@ public class FileUploadController {
 
     @PostMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
+                                   @RequestParam(value = "extractEntities", required = false) boolean extractEntities,
                                    RedirectAttributes redirectAttributes) {
 
         storageService.store(file);
 
         String fullPathToFile = Paths.get(uploadDirectory, file.getOriginalFilename()).toString();
         try {
-            var uploadResult = mongoService.saveDoc(fullPathToFile);
+            var uploadResult = mongoService.saveDoc(fullPathToFile, extractEntities);
             if (uploadResult.wasAcknowledged()) {
                 logger.info("Document uploaded succesfully with ID: {}", uploadResult.getInsertedId());
                 redirectAttributes.addFlashAttribute("message",

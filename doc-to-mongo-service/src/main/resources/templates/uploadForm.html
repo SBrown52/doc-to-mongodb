@@ -11,13 +11,14 @@
 </div>
 
 <div>
-    <h2>File Uploader to Atlas Search</h2>
+    <h2>File Uploader to Atlas</h2>
 </div>
 
 <div>
     <form method="POST" enctype="multipart/form-data" action="/">
         <table>
             <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+            <tr><td>Extract named entities:</td><td><input type="checkbox" th:checked="${extractEntities}" th:name="extractEntities"></input></td></tr>
             <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
         </table>
     </form>

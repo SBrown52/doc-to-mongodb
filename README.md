@@ -5,9 +5,7 @@
 This is a small project which allows you to extract data from documents such as PDF, word, txt etc, and make them queryable
 and searchable from MongoDB. When combined with Atlas Search, you can perform full Lucene text search on the document.
 
-**UPDATE**
-
-The most recent version also extracts the person, location and organisationentities from documents and adds them as an embedded object of arrays.
+Since 0.2, it is possible to extract entities from the documents.
 
 NB: this is designed as an example of what *you can do* with MongoDB, Atlas etc. It is not a production system, and it has not been tested
 against every single document type and for performance.
@@ -28,7 +26,7 @@ This repo contains 2 main folders:
 1. Make sure you have a MongoDB Atlas cluster running - you do not need Atlas and can run MongoDB locally, but you won't then be able
 to use the Atlas Search features.
 2. Start the [doc-to-mongo-service](doc-to-mongo-service) instance. See the project README for more details.
-3. Navigate to [localhost:9090](localhost:9090) (default ports if running locally), select a pdf of txt document to upload.
+3. Navigate to [localhost:9090](localhost:9090) (default ports if running locally), select a pdf or txt document to upload.
 
 ![Home Screen](documentation/home_screen.png)
 
@@ -65,3 +63,18 @@ returns...
 8. Run more complicated queries as required
 
 
+## Changelog
+
+## v0.3 (2022-04-03)
+* Improve Readme with clearer details on how to run the application
+* Remove the character limit when parsing large files
+* Make extracte entities optional - it is off by default
+* Fix broken tests
+
+## v0.2 (2022-03-17)
+* Perform named entity extract on documents using Apache Tika Open NLP libraries. For now, we extract person, location and organisation entities
+from documents and adds them as an embedded object of arrays.
+
+## v0.1 (2022-03-16)
+* Initial version, uploads files to a MongoDB instance, which can be searched via Atlas search. Text is extracted using
+Apache Tika.
