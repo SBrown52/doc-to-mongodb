@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.sbrown52.examples</groupId>
     <artifactId>doc-to-mongo</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>doc-to-mongo</name>
     <description>Upload documents to MongoDB</description>
 
